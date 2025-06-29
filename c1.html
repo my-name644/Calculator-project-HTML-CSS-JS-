@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    * {
+      /* margin: 0; */
+      /* padding: 0; */
+      /* box-sizing: border-box; */
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e90ff, #32cd32, #ffff00);
+      background-size: 400% 400%;
+      animation: rainbowBG 12s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    @keyframes rainbowBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      text-align: center;
+      text-shadow: 0 0 10px white, 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #ff9900;
+      margin-bottom: 20px;
+    }
+
+    .big-table {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 50%;
+      margin-top: 20px;
+    }
+
+    input[type="button"] {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      border: none;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      color: white;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="button"]:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: white;
+    }
+    .input{
+        text-align: center;
+        position: relative;
+        left: 1700px;
+        margin:20px ;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔢 Project Title: Calculator</h1>
+  <table class="big-table">
+    <tr>
+      <td colspan="4">
+        <input class="input" type="text" id="display" readonly />
+      </td>
+    </tr>
+    <tr>
+      <td><input type="button" value="1" onclick="handlevalue('1')" /></td>
+      <td><input type="button" value="2" onclick="handlevalue('2')" /></td>
+      <td><input type="button" value="3" onclick="handlevalue('3')" /></td>
+      <td><input type="button" value="+" onclick="handlevalue('+')" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="4" onclick="handlevalue('4')" /></td>
+      <td><input type="button" value="5" onclick="handlevalue('5')" /></td>
+      <td><input type="button" value="6" onclick="handlevalue('6')" /></td>
+      <td><input type="button" value="-" onclick="handlevalue('-')" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="7" onclick="handlevalue('7')" /></td>
+      <td><input type="button" value="8" onclick="handlevalue('8')" /></td>
+      <td><input type="button" value="9" onclick="handlevalue('9')" /></td>
+      <td><input type="button" value="*" onclick="handlevalue('*')" /></td>
+    </tr>
+    <tr>
+      <td><input type="button" value="C" onclick="handleClear()" /></td>
+      <td><input type="button" value="0" onclick="handlevalue('0')" /></td>
+      <td><input type="button" value="=" onclick="handleCalculate()" /></td>
+      <td><input type="button" value="/" onclick="handlevalue('/')" /></td>
+    </tr>
+  </table>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <script>
+    const display = document.getElementById("display");
+
+    function handlevalue(btn) {
+      display.value += btn;
+    }
+
+    function handleCalculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (e) {
+        display.value = "Error!";
+      }
+    }
+
+    function handleClear() {
+      display.value = "";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

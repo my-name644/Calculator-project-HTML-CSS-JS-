@@ -1,0 +1,78 @@
+
+
+body.dark-mode {
+    background: #121212;
+    color: white;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color: white; */
+    }
+    
+    body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e90ff, #32cd32, #ffff00);
+    background-size: 400% 400%;
+    animation: rainbowBG 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    }
+    
+    @keyframes rainbowBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+    }
+    
+    h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 
+    0 0 10px white,
+    0 0 20px #00ffff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff9900;
+    margin-bottom: 20px;
+    }
+    
+    
+    .big-table {
+    width: 50%;
+    font-size: 1rem; /* Bigger text */
+    padding: 10px;
+    border-collapse: collapse;
+    }
+    
+    .big-table th,
+    .big-table td {
+    padding: 2px;
+    border: 3px solid white;
+    }
+    input{
+    padding: 20px;
+    
+    
+    }
+    input[type="button"] {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .button{
+    text-align: right;
+    }
+    

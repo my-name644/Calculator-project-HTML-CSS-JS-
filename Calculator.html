@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css"></link>
+
+ 
+    
+</head>
+<body>
+  <button class="button" onclick="toggleDarkMode()">Dark Mode</button>
+    <h1>🔢 Project Title:Calculator</h1>
+<!-- <pre>HTML – for structur
+CSS – for styling and animations
+JavaScript – for calculator logic and functionality</pre><br> -->
+<!-- <button>Click Me</button> -->
+
+
+<div class="card">
+  <h2></h2>
+  <!-- <p>This is a fully functional, stylish calculator built using HTML, CSS, and JavaScript. It performs basic arithmetic operations like addition, subtraction, multiplication, and division. The unique feature of this calculator is its rainbow-themed animated background and glowing UI design, which gives it a vibrant and modern look.</p> -->
+</div>
+
+    <table class="big-table" border="1" align="center">
+        
+        <th>
+            <input type="text" name="" id="display"/>
+
+        </th>
+            <tr>
+                <TD  align="center">
+                <input id="one" type="button" value="1" onclick="handlevalue('1')"/>
+                <input id="two" type="button" value="2" onclick="handlevalue('2')"/>
+                <input type="button" value="3" onclick="handlevalue('3')"/>
+                <input type="button" value="+" onclick="handlevalue('+')"/>
+                </TD>
+            </tr>
+            
+            <tr>
+                <TD align="center">
+                <input type="button" value="4" onclick="handlevalue('4')"/>
+                <input type="button" value="5" onclick="handlevalue('5')"/>
+                <input type="button" value="6" onclick="handlevalue('6')"/>
+                <input type="button" value="-" onclick="handlevalue('-')"/>
+                </TD>
+            </tr>
+            
+            <tr>
+                <TD align="center">
+                <input type="button" value="7"onclick="handlevalue('7')"/>
+                <input type="button" value="8" onclick="handlevalue('8')"/>
+                <input type="button" value="9" onclick="handlevalue('9')"/>
+                <input type="button" value="*" onclick="handlevalue('*')"/>
+                </TD>
+            </tr>
+
+            <tr>
+                <TD align="center">
+                <input type="button" value="C" onclick="handleClear('C')"/>
+                <input type="button" value="0" onclick="handlevalue('0')"/>
+                <input type="button" value="=" onclick="handleCalculate('=')"/>
+                <input type="button" value="/" onclick="handlevalue('/')"/>
+                <input type="button" value="🔙" onclick="handleOnevalue()">
+                </TD>
+            </tr>
+    
+    </table>
+    <!-- <h1 id="h1">Calculator</h1> -->
+   
+</body>
+
+
+
+<script>
+    // function inputOne(){
+    // var one=document.getElementById("one").value;
+    // document.getElementById("textBox").value+=one;
+    // }
+    // function equalFun(){
+    //     alert("lagla Tej bane..!! Pahle sikha na");
+    // }
+    
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    const display= document.getElementById("display");
+    function handlevalue(btn){
+    display.value +=(btn);
+
+    }
+    function handleCalculate(){
+        display.value=eval(display.value);
+    }
+    function handleClear(){
+        display.value=" ";
+    }
+    function handleOnevalue(){
+        display.value= display.value.slice(0,-1);
+    }
+</script>
+</html>
